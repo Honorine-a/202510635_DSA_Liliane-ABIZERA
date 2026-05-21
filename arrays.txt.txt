@@ -1,0 +1,2 @@
+ARRAYS IN C++
+Arrays store multiple values in one variable.
