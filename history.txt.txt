@@ -1,0 +1,7 @@
+CHAPTER 1: History of C++
+C++ was developed by Bjarne Stroustrup in 1979.
+It was created as an extension of the C language.
+
+CHAPTER 2: Evolution of C++
+C++ added object oriented programming features.
+It became one of the most popular programming languages.
