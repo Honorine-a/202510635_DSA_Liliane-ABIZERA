@@ -1,54 +1,53 @@
- #include "student.h"
+#include <iostream>
+#include <string>
+#include "notepad.h"
 
-int main() {
+using namespace std;
 
+int main()
+{
     int choice;
+    string filename;
 
-    do {
-
-        cout << "\n===== STUDENT MANAGEMENT SYSTEM =====\n";
-
-        cout << "1. Add Student\n";
-        cout << "2. Display Students\n";
-        cout << "3. Search Student\n";
-        cout << "4. Update Student\n";
-        cout << "5. Delete Student\n";
-        cout << "6. Exit\n";
-
-        cout << "Enter your choice: ";
+    do
+    {
+        cout << "\n===== SIMPLE NOTEPAD =====" << endl;
+        cout << "1. Write File" << endl;
+        cout << "2. Read File" << endl;
+        cout << "3. Append File" << endl;
+        cout << "4. Exit" << endl;
+        cout << "Enter choice: ";
         cin >> choice;
 
-        switch(choice) {
-
+        switch(choice)
+        {
             case 1:
-                addStudent();
+                cout << "Enter filename: ";
+                cin >> filename;
+                writeFile(filename);
                 break;
 
             case 2:
-                displayStudents();
+                cout << "Enter filename: ";
+                cin >> filename;
+                readFile(filename);
                 break;
 
             case 3:
-                searchStudent();
+                cout << "Enter filename: ";
+                cin >> filename;
+                appendFile(filename);
                 break;
 
             case 4:
-                updateStudent();
-                break;
-
-            case 5:
-                deleteStudent();
-                break;
-
-            case 6:
-                cout << "Program terminated.\n";
+                cout << "Exiting program..." << endl;
                 break;
 
             default:
-                cout << "Invalid choice.\n";
+                cout << "Invalid choice." << endl;
         }
 
-    } while(choice != 6);
+    } while(choice != 4);
 
     return 0;
 }
