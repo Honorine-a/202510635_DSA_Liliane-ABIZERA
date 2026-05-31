@@ -1,53 +1,38 @@
 #include <iostream>
-#include <string>
-#include "notepad.h"
-
+#include "Functions.h"
 using namespace std;
 
-int main()
-{
+int main() {
+    LibraryBook books[MAX_BOOKS];
+    int count = 0;
     int choice;
-    string filename;
 
-    do
-    {
-        cout << "\n===== SIMPLE NOTEPAD =====" << endl;
-        cout << "1. Write File" << endl;
-        cout << "2. Read File" << endl;
-        cout << "3. Append File" << endl;
-        cout << "4. Exit" << endl;
+    do {
+        cout << "\n===== LIBRARY SYSTEM MENU =====\n";
+        cout << "1. Add New Book\n";
+        cout << "2. Display All Books\n";
+        cout << "3. Borrow Book\n";
+        cout << "4. Return Book\n";
+        cout << "5. Search Book by ID\n";
+        cout << "6. Display Overdue Books\n";
+        cout << "7. Calculate Total Fines\n";
+        cout << "8. Exit\n";
         cout << "Enter choice: ";
         cin >> choice;
 
-        switch(choice)
-        {
-            case 1:
-                cout << "Enter filename: ";
-                cin >> filename;
-                writeFile(filename);
-                break;
-
-            case 2:
-                cout << "Enter filename: ";
-                cin >> filename;
-                readFile(filename);
-                break;
-
-            case 3:
-                cout << "Enter filename: ";
-                cin >> filename;
-                appendFile(filename);
-                break;
-
-            case 4:
-                cout << "Exiting program..." << endl;
-                break;
-
-            default:
-                cout << "Invalid choice." << endl;
+        switch (choice) {
+            case 1: addBook(books, count); break;
+            case 2: displayBooks(books, count); break;
+            case 3: borrowBook(books, count); break;
+            case 4: returnBook(books, count); break;
+            case 5: searchBook(books, count); break;
+            case 6: displayOverdueBooks(books, count); break;
+            case 7: calculateTotalFines(books, count); break;
+            case 8: cout << "Exiting...\n"; break;
+            default: cout << "Invalid choice!\n";
         }
 
-    } while(choice != 4);
+    } while (choice != 8);
 
     return 0;
 }
