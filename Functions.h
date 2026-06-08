@@ -1,16 +1,21 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
-#include "LibraryBook.h"
+#include "Vehicle.h"
+#include <string>
+using namespace std;
 
-const int MAX_BOOKS = 100;
+// Validation
+bool isValidEmail(const string& email);
+bool isValidPhone(const string& phone);
+bool isValidPlate(const string& plate);
 
-void addBook(LibraryBook books[], int &count);
-void displayBooks(LibraryBook books[], int count);
-void searchBook(LibraryBook books[], int count);
-void borrowBook(LibraryBook books[], int count);
-void returnBook(LibraryBook books[], int count);
-void displayOverdueBooks(LibraryBook books[], int count);
-void calculateTotalFines(LibraryBook books[], int count);
+// File handling
+void saveRecord(const Vehicle& v);
+void displayAll();
+void searchByPlate(const string& plate);
+
+// Input helpers
+Vehicle inputVehicle();
 
 #endif
